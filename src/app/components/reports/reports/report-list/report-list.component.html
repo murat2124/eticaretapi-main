@@ -1,0 +1,25 @@
+<div *ngIf="loading">Loading...</div>
+
+<table *ngIf="!loading">
+  <thead>
+    <tr>
+      <th>Ürün ID</th>
+      <th>Ürün Adı</th>
+      <th>Toplam Giriş</th>
+      <th>Toplam Çıkış</th>
+      <th>Mevcut Stok</th>
+      <th>Tarihi</th>
+    
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let report of stokRaports">
+      <td>{{ report.productId }}</td>
+      <td>{{ report.productName }}</td>
+      <td>{{ report.totalEntry }}</td>
+      <td>{{ report.totalExit }}</td>
+      <td>{{ report. currentStock}}</td>
+      {{ report.lastMovementDate | date:'shortDate' }} {{ report.lastMovementDate | date:'shortTime' }}
+    </tr>
+  </tbody>
+</table>

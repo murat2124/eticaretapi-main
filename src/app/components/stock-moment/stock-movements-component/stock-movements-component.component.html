@@ -1,0 +1,154 @@
+<div class="stock-movements-container">
+  <h1>Değişiklik Yapılan Stok Hareketleri</h1>
+
+  <!-- Stok hareket tablosu -->
+  <table *ngIf="stockMovements.length > 0; else noDataTemplate">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Ürün ID</th>
+        <th>Miktar</th>
+        <th>Tür</th>
+        <th>Tarih</th>
+        <th>İşlemler</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let stockMovement of stockMovements">
+        <td>{{ stockMovement.id }}</td>
+        <td>{{ stockMovement.productId }}</td>
+        <td>{{ stockMovement.quantity }}</td>
+        <td>{{ stockMovement.type }}</td>
+        <td>{{ stockMovement.date | date: 'dd/MM/yyyy' }}</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Veri yoksa -->
+  <ng-template #noDataTemplate>
+    <p>Henüz stok hareketi bulunmamaktadır.</p>
+  </ng-template>
+
+  <!-- Stok Güncelleme Formu -->
+  <!-- Stok Güncelleme Formu -->
+<div *ngIf="selectedStockMovement.ProductId !== null" id="stokForm" class="stok-form">
+  <h2 class="stok-baslik">
+    <i class="fa fa-edit"></i> Stok Hareketini Düzenle
+  </h2>
+
+  <p class="urun-bilgisi" *ngIf="selectedProduct">
+    🛒 <strong>{{ selectedProduct.name }}</strong>
+    <span style="color: #888">
+      (ID: {{ selectedProduct.id }}) |
+      Önceki Stok: {{ oldStockQuantity }}
+    </span>
+  </p>
+/ <!-- ←←← güncleleme -->
+
+  <form (ngSubmit)="updateStockMovement()" class="form-alani">
+  <div class="form-row">
+    <label>İşlem:</label>
+    <button type="button" (click)="setMovementType('giriş')">➕ Ekle</button>
+    <button type="button" (click)="setMovementType('çıkış')">➖ Azalt</button>
+  </div>
+
+  <div class="form-row">
+    <label>Miktar:</label>
+    <input
+  type="number"
+  [(ngModel)]="selectedStockMovement.Quantity"
+  name="quantity"
+  readonly
+    />
+  </div>
+
+  <div class="form-row">
+    <label>Tarih:</label>
+    <input
+      type="text"
+      [(ngModel)]="selectedStockMovement.Date"
+      name="date"
+      readonly
+    />
+  </div>
+
+  <button type="submit" class="btn-guncelle">Güncelle</button>
+</form>
+
+</div>
+
+  <!-- Ürün Listesi -->
+  <h1>ÜRÜNLER</h1>
+  <table class="urun-tablosu">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Ad</th>
+        <th>Açıklama</th>
+        <th>Fiyat</th>
+        <th>Stok</th>
+        <th>Oluşturulma Tarihi</th>
+        <th>Kategori ID</th>
+        <th>İşlem</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products">
+        <td>{{ product.id }}</td>
+        <td>{{ product.name }}</td>
+        <td>{{ product.description }}</td>
+        <td>{{ product.price | currency }}</td>
+        <td>{{ product.stock }}</td>
+        <td>{{ product.createdDate | date: 'dd/MM/yyyy' }}</td>
+        <td>{{ product.categoryId }}</td>
+        <td>
+          <button class="btn-duzenle" (click)="selectProductForStockUpdate(product)">
+            Stok Miktarını Düzenle
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="stock-movements-container">
+  <h1>Deyişiklik Yapılan Stok Hareketleri</h1>
+
+  <!-- Admin şifresi değiştirme formu -->
+  <div >
+    
+    
+  </div>
+
+  <!-- Stok hareketleri tablosu -->
+  <table *ngIf="stockMovements && stockMovements.length > 0; else noDataTemplate">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Ürün ID</th>
+        <th>Miktar</th>
+        <th>Tür</th>
+        <th>Tarih</th>
+        <th>İşlemler</th>
+      </tr>
+    </thead>
+    <tbody *ngIf="stockMovements && stockMovements.length > 0; ">
+      <tr *ngFor="let stockMovement of stockMovements" >
+        <td>{{stockMovement.id}}</td>
+        <td>{{ stockMovement.productId }}</td>
+        <td>{{ stockMovement.quantity }}</td>
+        <td>{{ stockMovement.type }}</td>
+        <td>{{ stockMovement.date | date: 'dd/MM/yyyy' }}</td>
+        <td>
+          <button (click)="deleteStockMovoment(stockMovement.id)" >Stok Güncelleme Bilgilerini Sil</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <ng-template #noDataTemplate>
+    <p>Henüz stok hareketi bulunmamaktadır.</p>
+  </ng-template>
+</div>
+
+</div>

@@ -1,0 +1,25 @@
+<form [formGroup]="registerForm" (ngSubmit)="register()">
+  <h2 style="text-align: center; margin-bottom: 20px;">📝 Kullanıcı Kayıt</h2>
+
+  <input type="text" formControlName="firstName" placeholder="First Name" />
+  <div *ngIf="registerForm.get('firstName')?.invalid && registerForm.get('firstName')?.touched" style="color:red;">
+    First name is required.
+  </div>
+
+  <input type="text" formControlName="lastName" placeholder="Last Name" />
+  <div *ngIf="registerForm.get('lastName')?.invalid && registerForm.get('lastName')?.touched" style="color:red;">
+    Last name is required.
+  </div>
+
+  <input type="email" formControlName="email" placeholder="Email" />
+  <div *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched" style="color:red;">
+    Please enter a valid email.
+  </div>
+
+  <input type="password" formControlName="password" placeholder="Password" />
+  <div *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched" style="color:red;">
+    Password must be at least 6 characters.
+  </div>
+
+  <button type="submit" [disabled]="registerForm.invalid">Kayıt Ol</button>
+</form>

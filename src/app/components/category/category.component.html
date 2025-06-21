@@ -1,0 +1,23 @@
+<ul class="list-group">
+  <li
+    *ngFor="let category of categorys"
+    (click)="setCurrentCategory(category)"
+    [class.active]="category.id === currentCategory?.id"
+    class="list-group-item"
+    style="cursor:pointer"
+  >
+    {{ category.id }} - {{ category.name }}
+    <span *ngIf="categoryCounts[category.id] !== undefined" class="badge bg-primary ms-2">
+      Toplam: {{ categoryCounts[category.id] }}
+    </span>
+  </li>
+</ul>
+
+<p class="selected-products-title">Seçilen kategorinin ilk 3 ürünü:</p>
+<div class="selected-products-container">
+  <ul class="products-list">
+    <li *ngFor="let product of firstThreeProducts">
+      {{ product.name }} - {{ product.price }}₺
+    </li>
+  </ul>
+</div>

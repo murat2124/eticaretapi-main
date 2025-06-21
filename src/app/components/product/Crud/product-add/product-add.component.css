@@ -1,0 +1,101 @@
+/* Card Container */
+.container.mt-5 {
+  max-width: 900px;
+  margin-top: 50px;
+  padding: 20px;
+}
+
+/* Card Header */
+.card-header {
+  background-color: #007bff; /* Mavi başlık */
+  color: white; /* Beyaz metin */
+  border-radius: 5px 5px 0 0; /* Yuvarlatılmış üst köşeler */
+}
+
+/* Card Body */
+.card-body {
+  background-color: #1bb7b9;
+  border: 1px solid #ddd;
+  border-radius: 0 0 5px 5px; /* Yuvarlatılmış alt köşeler */
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Hafif gölge efekti */
+}
+
+/* Form Controls */
+.form-control {
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding: 12px;
+  background-color: #ffffff;
+  color: #333;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Focused Form Control */
+.form-control:focus {
+  border-color: #007bff; /* Mavi kenarlık */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Mavi parlama */
+}
+
+/* Invalid Form Control */
+.is-invalid {
+  border-color: #dc3545 !important;
+  box-shadow: 0 0 5px rgba(220, 53, 69, 0.5);
+}
+
+/* Invalid Feedback */
+.invalid-feedback {
+  color: #dc3545;
+  font-size: 0.875em;
+}
+
+/* Submit Button */
+.btn-success {
+  background-color: #28a745; /* Yeşil buton */
+  border-color: #28a745;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 12px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  width: 100%; /* Buton tam genişlikte */
+}
+
+.btn-success:hover {
+  background-color: #218838; /* Hoverda koyu yeşil */
+  border-color: #1e7e34;
+}
+
+/* Select Input */
+.form-select {
+  border-radius: 5px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  background-color: #ffffff;
+  color: #333;
+  transition: border-color 0.3s ease;
+}
+
+/* Select Hover and Focus */
+.form-select:focus {
+  border-color: #007bff; /* Mavi kenarlık */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Mavi parlama */
+}
+
+/* Placeholder */
+input::placeholder,
+textarea::placeholder {
+  color: #888;
+  font-style: italic;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container.mt-5 {
+    padding: 10px;
+  }
+
+  .card-body {
+    padding: 15px;
+  }
+}

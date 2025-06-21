@@ -1,0 +1,111 @@
+<form [formGroup]="productUpForm" (ngSubmit)="onSubmit()" class="container mt-4">
+  <h3>Ürün Güncelleme</h3>
+
+  <div class="row mb-3">
+    <div class="col-md-6">
+      <label for="id" class="form-label">ID</label>
+      <input id="id" formControlName="id" type="text" class="form-control" />
+      <div *ngIf="productUpForm.get('id')?.invalid && productUpForm.get('id')?.touched" class="text-danger">
+        ID is required.
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <label for="name" class="form-label">Name</label>
+      <input id="name" formControlName="name" type="text" class="form-control" />
+      <div *ngIf="productUpForm.get('name')?.invalid && productUpForm.get('name')?.touched" class="text-danger">
+        Name is required.
+      </div>
+    </div>
+  </div>
+  <div class="mb-3">
+  <label for="barcode" class="form-label">Barcode</label>
+  <input id="barcode" formControlName="barcode" type="text" class="form-control" />
+  <div *ngIf="productUpForm.get('barcode')?.invalid && productUpForm.get('barcode')?.touched" class="text-danger">
+    Barcode is required.
+  </div>
+</div>
+
+  <div class="mb-3">
+    <label for="description" class="form-label">Description</label>
+    <textarea id="description" formControlName="description" class="form-control" rows="3"></textarea>
+    <div *ngIf="productUpForm.get('description')?.invalid && productUpForm.get('description')?.touched" class="text-danger">
+      Description is required.
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <div class="col-md-4">
+      <label for="price" class="form-label">Price</label>
+      <input id="price" formControlName="price" type="number" step="0.01" class="form-control" />
+      <div *ngIf="productUpForm.get('price')?.invalid && productUpForm.get('price')?.touched" class="text-danger">
+        Price is required.
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <label for="stock" class="form-label">Stock</label>
+      <input id="stock" formControlName="stock" type="number" class="form-control" />
+      <div *ngIf="productUpForm.get('stock')?.invalid && productUpForm.get('stock')?.touched" class="text-danger">
+        Stock is required.
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <label for="createdDate" class="form-label">Created Date</label>
+      <input id="createdDate" formControlName="createdDate" type="date" class="form-control" />
+      <div *ngIf="productUpForm.get('createdDate')?.invalid && productUpForm.get('createdDate')?.touched" class="text-danger">
+        Created Date is required.
+      </div>
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label for="categoryId" class="form-label">Category ID</label>
+    <input id="categoryId" formControlName="categoryId" type="text" class="form-control" />
+    <div *ngIf="productUpForm.get('categoryId')?.invalid && productUpForm.get('categoryId')?.touched" class="text-danger">
+      Category ID is required.
+    </div>
+  </div>
+
+  <!-- Submit Butonu -->
+  <button type="submit" [disabled]="productUpForm.invalid" class="btn btn-primary btn-lg w-100" (click)="updateProduct()">
+    Submit
+  </button>
+</form>
+
+<!-- Ürün Listesi -->
+<table class="table table-striped mt-4">
+  <thead>
+    <tr>
+      <th>Ürün ID</th>
+      <th>Ürün Adı</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th>Stock</th>
+      <th>Created Date</th>
+      <th>Category ID</th>
+      <th>Barcode No</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Ürünleri listeleme -->
+    <tr *ngFor="let product of products">
+      <td>{{ product.id }}</td>
+      <td>{{ product.name }}</td>
+      <td>{{ product.description }}</td>
+      <td>{{ product.price | currency }}</td>
+      <td>{{ product.stock }}</td>
+      <td>{{ product.createdDate | date: 'dd/MM/yyyy' }}</td>
+      <td>{{ product.categoryId }}</td>
+        <td>{{ product.barcode }}</td>
+      <td>
+        <button class="btn btn-sm btn-outline-primary" (click)="fillForm(product)">
+          Formu Doldur
+        </button>
+      </td>
+    </tr>
+    
+  </tbody>
+</table>

@@ -1,0 +1,73 @@
+/* Navbar genel stiller */
+.custom-navbar {
+  background: linear-gradient(90deg, #0d47a1, #1976d2); /* Mavi geçiş */
+  padding: 0.75rem 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Navbar linkleri */
+.custom-navbar .nav-link {
+  color: white !important;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  padding: 10px 15px; /* Daha geniş iç boşluk */
+  display: block; /* Linkleri blok seviyesinde yapıyoruz */
+  z-index: 1; /* Tıklanabilir alanı üstte yapmak için */
+}
+
+/* Navbar linkleri arasına sadece sağ tarafına çizgi ekliyoruz */
+.custom-navbar .navbar-nav .nav-item:not(:last-child) {
+  border-right: 2px solid rgba(255, 255, 255, 0.5); /* Beyaz renkli çizgi */
+  margin-right: 15px; /* Linkler arasındaki boşluğu artırıyoruz */
+}
+
+/* Navbar linkleri hover durumunda renk değişiyor */
+.custom-navbar .nav-link:hover {
+  color: #ffeb3b !important;
+}
+
+/* Dropdown menüsünün görünürlüğünü sağlıyoruz */
+.custom-navbar .navbar-nav .nav-item.dropdown {
+  position: relative;
+}
+
+/* Dropdown menüsünün boyutunu artırıyoruz */
+.custom-navbar .dropdown-menu {
+  background-color: #f1f1f1;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 200px; /* Menüyü biraz daha dar tutuyoruz */
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 100%; /* Menüyü aşağıya doğru açmak için */
+  z-index: 9999;
+}
+
+/* Dropdown menüsünü açmak için */
+.custom-navbar .navbar-nav .nav-item.dropdown:hover .dropdown-menu {
+  display: block; /* Menü sadece açıldığında görünür olacak */
+}
+
+/* Dropdown öğelerinin hover durumunda renk değişimi */
+.custom-navbar .dropdown-item:hover {
+  background-color: #1976d2;
+  color: white;
+}
+
+/* Navbar brand stillerini düzenliyoruz */
+.custom-navbar .navbar-brand {
+  color: white !important;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+/* Üst kullanıcı barı */
+.top-navbar {
+  background-color: hsl(58, 95%, 52%); /* Açık gri */
+  border-bottom: 1px solid #963030;
+  font-size: 0.9rem;
+  z-index: 1050;
+  position: relative;
+}
+.custom-navbar .navbar-nav {
+  margin-top: 5px;
+}

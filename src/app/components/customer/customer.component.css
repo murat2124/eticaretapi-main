@@ -1,0 +1,93 @@
+.customer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* 2'li sütun */
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Müşteri Kartı */
+.customer-card {
+  background-color: #5bebdf;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.customer-card:hover {
+  transform: scale(1.02);
+}
+
+/* Başlık ve Bilgiler */
+.customer-header h2 {
+  font-size: 1.5rem;
+  color: #1976d2;
+  margin-bottom: 10px;
+}
+
+.customer-info p {
+  margin: 4px 0;
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Sipariş Listesi */
+.order-section h3 {
+  margin-top: 15px;
+  color: #0d47a1;
+  font-size: 1.2rem;
+}
+
+.order-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.order-item {
+  padding: 8px;
+  border-bottom: 1px solid #eee;
+  font-size: 0.95rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.order-id {
+  color: #1976d2;
+}
+
+.order-total {
+  color: #d32f2f;
+  font-weight: bold;
+}
+
+.order-date {
+  color: #666;
+}
+
+.no-orders {
+  font-style: italic;
+  color: #888;
+  margin-top: 10px;
+}
+.customer-card p {
+  border-bottom: 1px solid #4111ee;
+  padding-bottom: 8px;
+  margin-bottom: 8px;
+}
+.customer-card p:not(:last-child) {
+  border-bottom: 1px solid #ef0b0b;
+  padding-bottom: 8px;
+  margin-bottom: 8px;
+}
+.customer-card h2 {
+  margin-bottom: 12px;
+  color: #1976d2;
+  border-bottom: 2px solid #1976d2;
+  padding-bottom: 6px;
+}
+
+

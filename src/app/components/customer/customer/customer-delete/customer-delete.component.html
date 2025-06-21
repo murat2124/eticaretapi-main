@@ -1,0 +1,39 @@
+<!-- GİZLİ FORM -->
+<form [formGroup]="customerForm" style="display: none;">
+  <input formControlName="id" type="hidden" />
+  <input formControlName="name" type="hidden" />
+  <input formControlName="email" type="hidden" />
+  <input formControlName="phone" type="hidden" />
+  <input formControlName="passwordHash" type="hidden" />
+  <input formControlName="passwordSalt" type="hidden" />
+</form>
+
+<!-- MÜŞTERİ TABLOSU -->
+<div class="container mt-4">
+  <h3 class="mb-3">Müşteri Listesi</h3>
+
+  <table class="table table-bordered table-hover shadow-sm rounded">
+    <thead class="table-light">
+      <tr>
+        <th>ID</th>
+        <th>İsim</th>
+        <th>E-posta</th>
+        <th>Telefon</th>
+        <th>İşlemler</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let customer of customers">
+        <td>{{ customer.id }}</td>
+        <td>{{ customer.name }}</td>
+        <td>{{ customer.email }}</td>
+        <td>{{ customer.phone }}</td>
+        <td>
+          <button class="btn btn-outline-danger btn-sm" (click)="setIdAndDelete(customer.id)">
+            <i class="fas fa-trash-alt"></i> Sil
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

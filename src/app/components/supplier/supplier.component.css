@@ -1,0 +1,88 @@
+/* Başlık Stili */
+.title {
+  text-align: center;
+  margin: 20px 0;
+  font-size: 28px;
+  color: #4e73df; /* Mavi tonları */
+  font-weight: 600;
+}
+
+/* Tablo Genel Stil */
+.supplier-table {
+  width: 95%;
+  max-width: 1200px;
+  margin: 30px auto;
+  border-collapse: collapse;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 8px; /* Yuvarlatılmış köşeler */
+}
+
+/* Tablo Başlıkları */
+.supplier-table th,
+.supplier-table td {
+  padding: 15px 20px;
+  text-align: center;
+  font-size: 14px;
+  border: 1px solid #e1e1e1;
+  border-radius: 5px;
+}
+
+/* Tablo Başlık Rengi */
+.supplier-table th {
+  background-color: #6c5ce7; /* Mor tonları */
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* Satır Renk Alternatifleri */
+.supplier-table tr:nth-child(even) {
+  background-color: #fafafa; /* Çok açık gri */
+}
+
+.supplier-table tr:nth-child(odd) {
+  background-color: #ffffff; /* Beyaz */
+}
+
+/* Hover Efekti */
+.supplier-table tr:hover {
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
+
+/* Durum Stilini Göstermek İçin */
+.supplier-table .status-active {
+  background-color: #28a745; /* Yeşil */
+  color: white;
+  padding: 5px 10px;
+  border-radius: 3px;
+  font-weight: 600;
+}
+
+.supplier-table .status-inactive {
+  background-color: #dc3545; /* Kırmızı */
+  color: white;
+  padding: 5px 10px;
+  border-radius: 3px;
+  font-weight: 600;
+}
+
+/* İkonlar */
+.supplier-table td i {
+  color: #007bff; /* Mavi */
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+}
+
+.supplier-table td i:hover {
+  color: #0056b3; /* Daha koyu mavi */
+}
+
+/* Boş Liste Mesajı */
+.empty-message {
+  text-align: center;
+  font-style: italic;
+  color: #666;
+  font-size: 16px;
+  margin-top: 40px;
+}

@@ -1,0 +1,46 @@
+/* Form elemanlarının aralarındaki boşlukları düzenliyoruz */
+.container {
+  max-width: 800px;  /* Formun genişliğini sınırlıyoruz */
+}
+
+/* Tablonun daha okunabilir olması için stil ekliyoruz */
+table {
+  width: 100%;  /* Tabloyu tam genişlikte yapıyoruz */
+  margin-top: 20px;
+}
+
+th, td {
+  text-align: left;  /* Yazıları sola hizalıyoruz */
+  padding: 10px;  /* Hücrelere biraz boşluk ekliyoruz */
+}
+
+thead {
+  background-color: #f8f9fa;  /* Başlık satırının arka plan rengini açıyoruz */
+  font-weight: bold;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;  /* Çift satırlara arka plan rengi ekliyoruz */
+}
+
+/* Butonlar ve form elemanları için biraz daha genişlik ekliyoruz */
+.btn {
+  width: 100%;
+  padding: 10px;
+}
+
+/* input elemanları için düzgün aralık ve padding */
+input[type="number"] {
+  padding: 10px;
+  font-size: 16px;
+  width: 100%;
+}
+
+/* Ürünler listelendikten sonra daha kolay okunabilir olmalarını sağlamak için */
+table th, table td {
+  padding: 12px;
+}
+
+table {
+  border-collapse: collapse;
+}

@@ -1,0 +1,35 @@
+.customer-form {
+  max-width: 700px; /* genişliği artırdım */
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #202fdd;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  color: white;
+}
+
+.customer-form label {
+  color: #fff;
+}
+
+.button-group {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+   background-color: #eaebf2;
+     color: #d60606;
+}
+
+.button-group .btn {
+  flex: 1; /* butonlar eşit genişlikte */
+  min-width: 120px;
+}
+
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+

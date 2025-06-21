@@ -1,0 +1,14 @@
+/* styles.css veya customer-delete.component.css dosyanıza ekleyin */
+.btn-outline-danger:hover {
+  background-color: #dc3545;
+  color: white;
+}
+/* styles.css */
+.table th,
+.table td {
+  vertical-align: middle;
+}
+
+.btn-sm i {
+  margin-right: 5px;
+}

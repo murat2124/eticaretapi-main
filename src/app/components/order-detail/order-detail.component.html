@@ -1,0 +1,34 @@
+<div>
+  <label>Ürün:</label>
+  <select [(ngModel)]="selectedProductId">
+    <option *ngFor="let product of products" [value]="product.id">
+      {{ product.name }} - {{ product.price | currency }}
+    </option>
+  </select>
+
+  <label>Adet:</label>
+  <input type="number" [(ngModel)]="selectedQuantity" min="1" />
+
+  <button (click)="addProductToOrder()">Ekle</button>
+</div>
+
+<!-- Eklenen ürünleri göster -->
+<table>
+  <thead>
+    <tr>
+      <th>Ürün</th>
+      <th>Adet</th>
+      <th>Birim Fiyat</th>
+      <th>Toplam</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let detail of orderDetails">
+      <td>{{ detail.product?.name }}</td>
+      <td>{{ detail.quantity }}</td>
+      <td>{{ detail.unitPrice | currency }}</td>
+      <td>{{ detail.totalPrice | currency }}</td>
+    </tr>
+  </tbody>
+</table>
+

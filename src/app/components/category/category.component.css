@@ -1,0 +1,130 @@
+/* Kategori listesi */
+.list-group-item {
+  cursor: pointer;
+  background-color: #f0f8ff; /* Açık mavi iç dolgu */
+  border: 1px solid #d0e4ff;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  padding: 14px 18px;
+  font-weight: 500;
+  transition: background-color 0.3s, transform 0.2s;
+  color: #004085;
+
+  /* Flex ile içerik arası boşluk ve hizalama */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.list-group-item:hover {
+  background-color: #d0e4ff; /* Hover olduğunda daha belirgin */
+  transform: scale(1.02);
+}
+
+.list-group-item.active {
+  background-color: #007bff; /* Seçili olan */
+  color: rgb(99, 219, 19);
+  font-weight: 600;
+  box-shadow: 0 0 12px rgba(0, 123, 255, 0.4);
+}
+
+/* Ürün sayısı badge */
+.badge {
+  background-color: #17a2b8; /* Turkuaz ton */
+  color: rgb(107, 11, 232);
+  font-size: 0.85rem;
+  padding: 4px 10px;
+  border-radius: 20px;
+  min-width: 50px;
+  text-align: center;
+}
+
+/* Ürün listesi */
+ul.products-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+ul.products-list li {
+  background-color: #f8f9fa;
+  border-radius: 6px;
+  padding: 10px 15px;
+  margin-bottom: 8px;
+  font-weight: 500;
+  box-shadow: 0 2px 5px rgb(0 0 0 / 0.1);
+  transition: background-color 0.3s ease;
+}
+
+ul.products-list li:hover {
+  background-color: #e9f5ff;
+}
+p {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #ad2a2a;
+  margin-top: 25px;
+  margin-bottom: 10px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+/* Seçilen kategori ürünleri başlığı */
+.selected-products-title {
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: #222;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Ürün listesi konteyneri */
+.selected-products-container {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  padding: 15px 20px;
+  border-radius: 12px;
+  color: white;
+  box-shadow: 0 4px 12px rgba(37, 117, 252, 0.6);
+}
+
+/* Ürün listesi elemanları */
+.selected-products-container ul.products-list li {
+  background-color: rgba(255, 255, 255, 0.15);
+  margin-bottom: 10px;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+/* Seçilen kategori ürünleri başlığı */
+.selected-products-title {
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: #222;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Ürün listesi konteyneri */
+.selected-products-container {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  padding: 15px 20px;
+  border-radius: 12px;
+  color: white;
+  box-shadow: 0 4px 12px rgba(37, 117, 252, 0.6);
+}
+
+/* Ürün listesi elemanları */
+.selected-products-container ul.products-list li {
+  background-color: rgba(255, 255, 255, 0.15);
+  margin-bottom: 10px;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.selected-products-container ul.products-list li:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  cursor: default;
+}

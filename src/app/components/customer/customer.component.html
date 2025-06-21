@@ -1,0 +1,33 @@
+<div class="customer-container">
+  <!-- Tüm müşteriler arasında dön -->
+  <div *ngFor="let customer of customers" class="customer-card">
+    <!-- Müşteri Bilgileri -->
+    <div class="customer-header">
+      <h2>{{ customer.name }}</h2>
+      <div class="customer-info">
+        <p><strong>Id:</strong> {{ customer.id }}</p>
+        <p><strong>Email:</strong> {{ customer.email }}</p>
+        <p><strong>Telefon:</strong> {{ customer.phone }}</p>
+      </div>
+    </div>
+
+    <!-- Siparişler varsa göster -->
+    <div *ngIf="customer.orders?.length > 0; else noOrders" class="order-section">
+      <h3>Siparişler</h3>
+      <ul class="order-list">
+        <li *ngFor="let order of customer.orders" class="order-item">
+          <span class="order-id">ID: {{ order.id }}</span>
+          <span class="order-total">Tutar: {{ order.totalAmount | currency:'TRY' }}</span>
+          <span class="order-date">Tarih: {{ order.orderDate | date:'shortDate' }}</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Sipariş yoksa mesaj göster -->
+    <ng-template #noOrders>
+      <div class="no-orders">
+        <em>Henüz siparişi yok.</em>
+      </div>
+    </ng-template>
+  </div>
+</div>

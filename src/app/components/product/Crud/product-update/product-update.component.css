@@ -1,0 +1,82 @@
+/* Form Arka Planı ve Şıklaştırma */
+.container.mt-4 {
+  background-color: #101f0b; /* Mavi arka plan */
+  padding: 30px;
+  border-radius: 10px; /* Yuvarlatılmış köşeler */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Hafif gölge efekti */
+  margin-top: 20px;
+  color: white; /* Metin rengini beyaz yapıyoruz */
+}
+
+/* Form elemanları */
+.form-control {
+  border-radius: 5px;
+  border: 1px solid #80bdff; /* Mavi tonları ile kenarlık */
+  padding: 12px;
+  background-color: #e9f7ff; /* Açık mavi arka plan */
+  color: #333; /* Metin rengi */
+}
+
+.form-control:focus {
+  border-color: #495ada; /* Odaklanıldığında koyu mavi kenarlık */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Hafif mavi parlama */
+}
+
+/* Submit Butonunun Özelleştirilmesi */
+.btn-primary {
+  background-color: #28a745; /* Yeşil arka plan */
+  border-color: #28a745;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 12px 20px;
+  border-radius: 5px; /* Yuvarlatılmış köşeler */
+  width: 100%; /* Tam genişlik */
+  transition: background-color 0.3s ease; /* Geçiş efekti */
+}
+
+.btn-primary:hover {
+  background-color: #218838; /* Hoverda koyu yeşil */
+  border-color: #1e7e34;
+}
+
+/* Başlıklar için Stil */
+h3 {
+  text-align: center;
+  color: white; /* Başlık metni beyaz */
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+/* Tablo Stil Özelleştirmesi */
+table {
+  width: 100%;
+  margin-top: 30px;
+  border-collapse: collapse; /* Çift kenarlıkları engelle */
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Tablo için gölge efekti */
+}
+
+table th, table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd; /* Satırları ayıran ince çizgi */
+}
+
+table th {
+  background-color: #f4f4f4; /* Başlık satırının arka plan rengi */
+  font-weight: bold;
+}
+
+table tbody tr:nth-child(even) {
+  background-color: #f9f9f9; /* Çift satırlara farklı arka plan rengi */
+}
+
+table tbody tr:hover {
+  background-color: #f1f1f1; /* Satır üzerine gelindiğinde renk değişikliği */
+  cursor: pointer; /* İmleç değişir */
+}
+
+table td {
+  font-size: 14px;
+}

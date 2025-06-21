@@ -1,0 +1,35 @@
+
+
+<table class="supplier-table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Ad</th>
+      <th>Telefon</th>
+      <th>Email</th>
+      <th>Şehir</th>
+      <th>Ülke</th>
+      <th>Durum</th>
+      <th>Tip</th>
+      <th>Oluşturulma</th>
+    </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let s of suppliers">
+    <td>{{ s.id }}</td>
+    <td>{{ s.name }}</td>
+    <td>{{ s.phone }}</td>
+    <td>{{ s.email }}</td>
+    <td>{{ s.city }}</td>
+    <td>{{ s.country }}</td>
+    <td>{{ s.status }}</td>
+    <td>{{ s.supplierType  }}</td>
+    <td>{{ s.createdAt | date: 'shortDate' }}</td>
+  </tr>
+</tbody>
+
+</table>
+
+<div *ngIf="suppliers && suppliers.length === 0" class="empty-message">
+  Kayıtlı tedarikçi bulunamadı.
+</div>

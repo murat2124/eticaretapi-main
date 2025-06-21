@@ -1,0 +1,88 @@
+form {
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 25px;
+  background: #f7f9fc;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+form div {
+  margin-bottom: 18px;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="number"],
+input[type="password"],
+select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1.8px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  background-color: #fff;
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus,
+input[type="number"]:focus,
+input[type="password"]:focus,
+select:focus {
+  outline: none;
+  border-color: #0066cc;
+  box-shadow: 0 0 8px rgba(0, 102, 204, 0.3);
+}
+
+select {
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: url("data:image/svg+xml;charset=US-ASCII,%3csvg%20width%3d%2214%22%20height%3d%229%22%20viewBox%3d%220%200%2014%209%22%20fill%3d%22none%22%20xmlns%3d%22http://www.w3.org/2000/svg%22%3e%3cpath%20d%3d%22M1%201L7%207L13%201%22%20stroke%3d%22%23666%22%20stroke-width%3d%222%22%20stroke-linecap%3d%22round%22%20stroke-linejoin%3d%22round%22/%3e%3c/svg%3e") no-repeat right 12px center / 14px 9px;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 12px 0;
+  font-size: 18px;
+  background-color: #0066cc;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover:not(:disabled) {
+  background-color: #004999;
+}
+
+button[type="submit"]:disabled {
+  background-color: #a8c0e5;
+  cursor: not-allowed;
+}
+
+.error {
+  color: #d93025;
+  font-size: 13px;
+  margin-top: 5px;
+}
+
+input[readonly] {
+  background-color: #f0f0f0; /* Açık gri arka plan */
+  color: #555;              /* Hafif koyu yazı */
+  border: 1px solid #ccc;
+  cursor: not-allowed;
+}
+

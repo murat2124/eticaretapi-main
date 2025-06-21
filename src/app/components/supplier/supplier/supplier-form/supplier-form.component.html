@@ -1,0 +1,112 @@
+<!-- Tedarikçi Formu -->
+<div class="supplier-form-container">
+  <h2>Tedarikçi Formu</h2>
+  <form [formGroup]="supplierForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label>Ad</label>
+      <input formControlName="name" />
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label>Telefon</label>
+        <input formControlName="phone" />
+      </div>
+      <div class="form-group">
+        <label>Fax</label>
+        <input formControlName="fax" />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Email</label>
+      <input formControlName="email" type="email" />
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label>Şehir</label>
+        <input formControlName="city" />
+      </div>
+      <div class="form-group">
+        <label>Ülke</label>
+        <input formControlName="country" />
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label>Posta Kodu</label>
+        <input formControlName="postalCode" />
+      </div>
+      <div class="form-group">
+        <label>Eyalet</label>
+        <input formControlName="state" />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Adres (Sokak)</label>
+      <input formControlName="street" />
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label>Durum</label>
+        <select formControlName="status">
+          <option value="Active">Aktif</option>
+          <option value="Inactive">Pasif</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Tedarikçi Tipi</label>
+        <input formControlName="supplierType" />
+      </div>
+
+      <div class="form-group">
+        <label>Tedarikçi Id</label>
+        <input formControlName="id" />
+      </div>
+    </div>
+
+    <button type="button" class="btn btn-primary" (click)="add()">EKLE</button>
+    <button type="button" class="btn btn-warning" (click)="update()">GÜNCELLE</button>
+    <button type="button" class="btn btn-danger" (click)="delete()">SİL</button>
+    <button type="button" class="btn btn-info" (click)="getId()">ID GETİR</button>
+  </form>
+</div>
+
+<!-- Tablo -->
+<table class="supplier-table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Ad</th>
+      <th>Telefon</th>
+      <th>Email</th>
+      <th>Şehir</th>
+      <th>Ülke</th>
+      <th>Durum</th>
+      <th>Tip</th>
+      <th>Oluşturulma</th>
+      <th>İşlem</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let s of suppliers">
+      <td>{{ s.id }}</td>
+      <td>{{ s.name }}</td>
+      <td>{{ s.phone }}</td>
+      <td>{{ s.email }}</td>
+      <td>{{ s.city }}</td>
+      <td>{{ s.country }}</td>
+      <td>{{ s.status }}</td>
+      <td>{{ s.supplierType }}</td>
+      <td>{{ s.createdAt | date: 'shortDate' }}</td>
+      <td>
+        <button class="btn-select" (click)="populateForm(s)">Seç</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

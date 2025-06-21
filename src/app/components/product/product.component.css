@@ -1,0 +1,130 @@
+/* Kategorilerin yatayda dizilmesi */
+.category-buttons {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap; /* Taşan kategoriler alt satıra geçsin */
+  gap: 10px;
+  margin-bottom: 20px; /* Kategori butonları ile ürünlerin arasındaki boşluğu ayarlayalım */
+}
+
+/* Kategori butonlarının temel stilini özelleştirelim */
+.category-buttons .btn {
+  margin-right: 5px;
+  margin-bottom: 5px;
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 10px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  text-transform: capitalize; /* Buton yazılarını büyük hale getirir */
+}
+
+/* Hover üzerine geldiğinde animasyon */
+.category-buttons .btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+/* Kategori butonlarının renkleri */
+.category-buttons .btn:nth-child(1) {
+  background-color: #4CAF50; /* Yeşil */
+  color: white;
+  border: none;
+}
+
+.category-buttons .btn:nth-child(2) {
+  background-color: #FF9800; /* Turuncu */
+  color: white;
+  border: none;
+}
+
+.category-buttons .btn:nth-child(3) {
+  background-color: #2196F3; /* Mavi */
+  color: white;
+  border: none;
+}
+
+.category-buttons .btn:nth-child(4) {
+  background-color: #9C27B0; /* Mor */
+  color: white;
+  border: none;
+}
+
+.category-buttons .btn:nth-child(5) {
+  background-color: #F44336; /* Kırmızı */
+  color: white;
+  border: none;
+}
+
+.category-buttons .btn:nth-child(6) {
+  background-color: #FF5722; /* Koyu Turuncu */
+  color: white;
+  border: none;
+}
+
+.category-buttons .btn:nth-child(7) {
+  background-color: #00BCD4; /* Mavi-Yeşil */
+  color: white;
+  border: none;
+}
+
+.category-buttons .btn:nth-child(8) {
+  background-color: #009688; /* Yeşil */
+  color: white;
+  border: none;
+}
+
+/* Özel renkler: Hobi, Giyim, Kitap */
+.category-buttons .btn:nth-child(9) {
+  background-color: #8E24AA; /* Hobi - Mormsı Pembe */
+  color: white;
+  border: none;
+}
+
+.category-buttons .btn:nth-child(10) {
+  background-color: #FF4081; /* Giyim - Pembe */
+  color: white;
+  border: none;
+}
+
+.category-buttons .btn:nth-child(11) {
+  background-color: #8BC34A; /* Kitap - Yeşil */
+  color: white;
+  border: none;
+}
+
+/* Aktif kategori butonunun görünümü */
+.category-buttons .btn.active {
+  background-color: #303F9F; /* Seçili kategoriye özel renk */
+  color: white;
+  border-color: #303F9F;
+}
+
+/* Arama kutusunun hizalanması */
+.mb-3 {
+  margin-bottom: 15px;
+}
+
+.form-select, .form-control {
+  height: 40px;
+  font-size: 14px;
+}
+
+/* Tabloya üstten biraz boşluk ekleyelim */
+.table {
+  margin-top: 30px;
+}
+.category-title {
+  font-size: 24px;
+  font-weight: bold;
+  background: linear-gradient(90deg, #007bff, #00c6ff);
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-align: center;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}

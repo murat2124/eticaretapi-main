@@ -1,0 +1,179 @@
+<!-- 🔝 Kullanıcı Bilgi Barı (En Üste Eklenecek) -->
+<nav class="navbar top-navbar py-1 px-3" *ngIf="authService.isLoggedIn()">
+  <div class="container-fluid justify-content-end">
+    <span class="navbar-text me-3">
+      👤 {{ userName }} <small class="text-muted">({{ userRoles.length > 0 ? userRoles.join(', ') : 'Misafir' }})</small>
+    </span>
+    <button class="btn btn-sm btn-outline-danger" (click)="logout()">Çıkış</button>
+  </div>
+</nav>
+<nav class="navbar navbar-expand-lg custom-navbar">
+  
+  <div class="container">
+
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/products">Ana Sayfa</a>
+        </li>
+
+        <!-- Ürünler Dropdown -->
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="productsDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Ürünler
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="productsDropdown">
+            <li><a class="dropdown-item" routerLink="/products/add">Ürün Ekle</a></li>
+            <li><a class="dropdown-item" routerLink="/products/update">Ürün Güncelle</a></li>
+            <li><a class="dropdown-item" routerLink="/products/delete">Ürün Sil</a></li>
+
+            <li><a class="dropdown-item" routerLink="/category/add">Kategory Ekle,Güncelle,Sil  </a></li>
+ 
+          </ul>
+        </li>
+
+        <!-- Müşteriler Dropdown -->
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="customersDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Müşteriler
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="customersDropdown">
+            <li><a class="dropdown-item" routerLink="/customers/list">Müşteri Listesi</a></li>
+            <li><a class="dropdown-item" routerLink="/customers/add">Müşteri Ekle</a></li>
+            <li><a class="dropdown-item" routerLink="/customers/update">Müşteri Güncelle</a></li>
+            <li><a class="dropdown-item" routerLink="/customers/delete">Müşteri Sil</a></li>
+          </ul>
+        </li>
+
+        <!-- Kullanıcılar Dropdown -->
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="usersDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Kullanıcılar
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="usersDropdown">
+            <li><a class="dropdown-item" routerLink="/auth/register">Register</a></li>
+            <li><a class="dropdown-item" routerLink="/auth/login">Login</a></li>
+            <li><a class="dropdown-item" routerLink="/users/guest">Misafir</a></li>
+            <li><a class="dropdown-item" routerLink="/users/manager">Yönetici/Admin</a></li>
+            <li><a class="dropdown-item" routerLink="/users/editor">Kullanıcı</a></li>
+            <li><a class="dropdown-item" routerLink="/users/support">DepoKullanıcı</a></li>
+          </ul>
+        </li>
+
+        <!-- Stok Hareketleri Dropdown -->
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="stockDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Stok Hareketleri
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="stockDropdown">
+            <li><a class="dropdown-item" routerLink="/stock/movements">Stok Hareketleri Listesi</a></li>
+            <li><a class="dropdown-item" routerLink="/stock/inventory">Stok Envanteri</a></li>
+            <li><a class="dropdown-item" routerLink="/stock/reports">Stok Raporları</a></li>
+          </ul>
+        </li>
+
+        
+        <!-- Siparişler Dropdown -->
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="orderDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Siparişler
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="orderDropdown">
+            <li><a class="dropdown-item" routerLink="/order">Sipariş Listesi</a></li>
+            <li><a class="dropdown-item" routerLink="/order/add">Sipariş Ekle</a></li>
+            <li><a class="dropdown-item" routerLink="/order/update">Sipariş Güncelle</a></li>
+            <li><a class="dropdown-item" routerLink="/order/cancel">Sipariş İptal</a></li>
+            <li><a class="dropdown-item" routerLink="/order/status">Sipariş Durumu Yönetimi</a></li>
+               <li><a class="dropdown-item" routerLink="/orderDetail">SiparişDetayları</a></li>
+            <li><a class="dropdown-item" routerLink="/order/reports">Sipariş Raporları</a></li>
+          </ul>
+        </li>
+
+
+        <!-- Tedarikçiler Dropdown -->
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="supplierDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Tedarikçiler
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="supplierDropdown">
+            <li><a class="dropdown-item" routerLink="/supplier">Tedarikçi Listesi</a></li>
+            <li><a class="dropdown-item" routerLink="/supplier-form">Tedarikçi Formu</a></li>
+          </ul>
+        </li>
+
+        <!-- Daha Fazla Dropdown -->
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Daha Fazla
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><a class="dropdown-item" routerLink="/settings">Ayarlar</a></li>
+            <li><a class="dropdown-item" routerLink="/report-list">Stok Raporu</a></li>
+          </ul>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>

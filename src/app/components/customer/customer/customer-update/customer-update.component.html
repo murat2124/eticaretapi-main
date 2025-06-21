@@ -1,0 +1,64 @@
+<form [formGroup]="customerForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label>ID:</label>
+    <input type="text" formControlName="id" />
+  </div>
+
+  <div>
+    <label>Ad:</label>
+    <input type="text" formControlName="name" />
+  </div>
+
+  <div>
+    <label>Email:</label>
+    <input type="email" formControlName="email" />
+  </div>
+
+  <div>
+    <label>Telefon:</label>
+    <input type="text" formControlName="phone" />
+  </div>
+
+  <div>
+    <label>Orders (Siparişler):</label>
+    <input
+      type="text"
+      formControlName="orders"
+      placeholder="Virgülle ayırarak girin"
+    />
+  </div>
+
+  <button type="submit">Güncelle</button>
+</form>
+
+<h2>Müşteri Listesi</h2>
+<table class="customer-table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Ad</th>
+      <th>Email</th>
+      <th>Telefon</th>
+      <th>Siparişler</th>
+      <th>İşlem</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let customer of customers">
+      <td>{{ customer.id }}</td>
+      <td>{{ customer.name }}</td>
+      <td>{{ customer.email }}</td>
+      <td>{{ customer.phone }}</td>
+      <td>{{ customer.orders?.length ? customer.orders.join(', ') : '' }}</td>
+      <td>
+        <button
+          class="select-button"
+          type="button"
+          (click)="selectCustomer(customer)"
+        >
+          Seç
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

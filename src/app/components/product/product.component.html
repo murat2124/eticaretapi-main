@@ -1,0 +1,100 @@
+<div class="container mt-4">
+  <!-- Üst Kısım: Arama ve Kategori Seçimi -->
+  <div class="row">
+    <!-- Kategoriler - Yan Yana -->
+    <div class="col-md-12">
+      <div class="category-title">KATEGORY LİSTESİ</div>
+      <div class="category-buttons">
+        <button
+          *ngFor="let category of categories"
+          [class.active]="filterCategoryId === category.id"
+          (click)="onCategoryClick(category.id)"
+          class="btn btn-outline-primary"
+        >
+        <span class="category-id">({{ category.id }})</span>
+          {{ category.name }}
+          
+       
+        </button>
+        <button
+          [class.active]="filterCategoryId === null"
+          (click)="onCategoryClick(null)"
+          class="btn btn-outline-secondary"
+        >
+          Tüm Kategoriler
+        </button>
+        
+      </div>
+    </div>
+
+    <!-- Ürün Arama -->
+    <div class="col-md-12 mt-4">
+      <div class="mb-3">
+        <label for="filtertext" class="form-label">
+          Ürün İsmine Göre Arama</label
+        >
+        <input
+          type="text"
+          [(ngModel)]="filterText"
+          class="form-control"
+          id="filtertext"
+          placeholder="arama ifadesi giriniz."
+        />
+      </div>
+    </div>
+  </div>
+  
+
+  <!-- Seçilen filtre bilgisi -->
+  <div *ngIf="filterText" class="alert alert-primary">
+    "{{ filterText }}" aradınız...
+  </div>
+
+  <!-- Ürün Tablosu -->
+   
+  <table class="table table-bordered mt-4">
+    <thead>
+      <tr>
+        <th>ID</th>
+
+        <th>Ad</th>
+        <th>Açıklama</th>
+        <th>Fiyat</th>
+        <th>Stok</th>
+        <th>Oluşturulma Tarihi</th>
+        <th>Kategorİsmi</th>
+
+        <th>Kategori ID</th>
+        <th>Barkod No</th>
+      </tr>
+    </thead>
+    <tbody *ngIf="products?.length; else noData">
+      <tr
+        *ngFor="
+          let product of products
+            | filterPipe : filterText
+            | categoryFilter : filterCategoryId
+        "
+      >
+        <td>{{ product.id }}</td>
+
+        <td>{{ product.name }}</td>
+        <td>{{ product.description }}</td>
+        <td>{{ product.price | currency }}</td>
+        <td>{{ product.stock }}</td>
+        <td>{{ product.createdDate | date : "dd/MM/yyyy" }}</td>
+        <td>{{ getCategoryName(product.categoryId) }}</td>
+
+        <td>{{ product.categoryId }}</td>
+        <td>{{ product.barcode }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Veri Bulunamadığında Mesaj -->
+  <ng-template #noData>
+    <tr>
+      <td colspan="8">Veri bulunamadı</td>
+    </tr>
+  </ng-template>
+</div>

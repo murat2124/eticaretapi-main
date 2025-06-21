@@ -1,0 +1,72 @@
+<form [formGroup]="ordersForm" (ngSubmit)="addOrder()">
+
+  <!-- Order Date -->
+  <div>
+    <label for="orderDate">Order Date</label>
+    <input id="orderDate" type="date" formControlName="orderDate" />
+    <div *ngIf="ordersForm.get('orderDate')?.invalid && ordersForm.get('orderDate')?.touched">
+      <small class="error">Order date is required.</small>
+    </div>
+  </div>
+
+  <!-- Customer Select -->
+  <div>
+    <label for="customerId">Customer</label>
+    <select id="customerId" formControlName="customerId" (change)="onCustomerChange()">
+      <option value="">-- Select Customer --</option>
+      <option *ngFor="let customer of customers" [value]="customer.id">
+        {{ customer.name }}
+      </option>
+    </select>
+    <div *ngIf="ordersForm.get('customerId')?.invalid && ordersForm.get('customerId')?.touched">
+      <small class="error">Customer is required.</small>
+    </div>
+  </div>
+
+  <!-- Product Select -->
+  <div>
+    <label for="productId">Product</label>
+    <select id="productId" formControlName="productId" (change)="onProductChange()">
+      <option value="">-- Select Product --</option>
+      <option *ngFor="let product of products" [value]="product.id">
+        {{ product.name }}
+      </option>
+    </select>
+    <div *ngIf="ordersForm.get('productId')?.invalid && ordersForm.get('productId')?.touched">
+      <small class="error">Product is required.</small>
+    </div>
+  </div>
+
+  <!-- Product Price & Stock -->
+  <div *ngIf="selectedProduct">
+    <label for="productPrice">Product Price</label>
+    <input id="productPrice" type="number" [value]="selectedProduct.price" readonly class="info-input" />
+
+    <label for="productStock">Stock Quantity</label>
+    <input id="productStock" type="number" [value]="selectedProduct.stock" readonly class="info-input" />
+  </div>
+
+  <!-- Total Amount -->
+  <div>
+    <label for="totalAmount">Total Amount</label>
+    <input id="totalAmount" type="number" formControlName="totalAmount" />
+    <div *ngIf="ordersForm.get('totalAmount')?.invalid && ordersForm.get('totalAmount')?.touched">
+      <small class="error">Total amount is required and must be >= 0.</small>
+    </div>
+  </div>
+
+  <!-- Customer Info -->
+  <div>
+    <label for="CustomerName">Customer Name</label>
+    <input id="CustomerName" type="text" formControlName="CustomerName" readonly class="info-input" />
+
+    <label for="CustomerEmail">Email</label>
+    <input id="CustomerEmail" type="email" formControlName="CustomerEmail" readonly class="info-input" />
+
+    <label for="CustomerPhone">Phone</label>
+    <input id="CustomerPhone" type="text" formControlName="CustomerPhone" readonly class="info-input" />
+  </div>
+
+  <button type="submit" [disabled]="ordersForm.invalid">Add Order</button>
+
+</form>
